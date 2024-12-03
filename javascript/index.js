@@ -20,6 +20,16 @@ function updateTime() {
       "h:mm:ss [<small>] A[</small>]"
     );
   }
+  let melbourneElement = document.querySelector("#melbourne");
+  if (melbourneElement) {
+    let melbourneDateElement = melbourneElement.querySelector(".date");
+    let melbourneTimeElement = melbourneElement.querySelector(".time");
+    let melbourneTime = moment().tz("Australia/Victoria");
+    melbourneDateElement.innerHTML = melbourneTime.format("MMMM Do YYYY");
+    melbourneTimeElement.innerHTML = melbourneTime.format(
+      "h:mm:ss [<small>] A[</small>]"
+    );
+  }
 }
 
 function updateCity(event) {
